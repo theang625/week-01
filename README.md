@@ -21,7 +21,8 @@ Double-clicked the file → browser opened it locally (`file:///...`).
 ```bash
 git init
 git add .
-git commit -m "Week 01: add hello.html and README"
-git remote add origin https://github.com/nhimdara/WCT-week1.git
+git commit -m "web101-labs"
+git remote add origin https://github.com/theang625/week-01.git
+git branch -M main
 git push -u origin main
 ```
