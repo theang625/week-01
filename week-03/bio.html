@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Bio</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="home.html">Home</a> | <a href="projects.html">Projects</a>|
+        <a href="bio.html">Bio</a>
+      </nav>
+      <h1>About Me</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>I'm Chhuntheang</h2>
+        <!-- Fixed Image with proper alt text -->
+        <img
+          src="../week-02/site/profile.jpg"
+          alt="A professional portrait of an IT Engineering student"
+          width="200"
+        />
+        <p>
+          I am currently a second-year IT student focused on networking and
+          software development.
+        </p>
+      </section>
+
+      <section>
+        <h2>Online Presence</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/theang625" target="_blank"
+              >My GitHub Profile</a
+            >
+          </li>
+          <li><a href="projects.html">My Project Portfolio</a></li>
+          <li>
+            <a href="https://linkedin.com" target="_blank"
+              >Connect on LinkedIn</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Get in Touch</h2>
+        <!-- Form with proper labels and validation -->
+        <form action="#" method="POST">
+          <label for="full-name">Name:</label>
+          <input
+            type="text"
+            id="full-name"
+            name="name"
+            required
+            minlength="2"
+          />
+          <br>
+          <label for="user-email">Email:</label>
+          <input type="email" id="user-email" name="email" required />
+          <br />
+          <label for="topic">Topic:</label>
+          <select id="topic" name="topic" required>
+            <option value="">--Please choose an option--</option>
+            <option value="networking">Networking</option>
+            <option value="programming">Programming</option>
+            <option value="other">Other</option>
+          </select>
+          <br />
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            minlength="10"
+          ></textarea>
+          <br>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <aside>
+      <h3>Fun Fact</h3>
+      <p>
+        I enjoy solving modular arithmetic problems and studying the RSA
+        algorithm in my free time!
+      </p>
+    </aside>
+
+    <footer>
+      <p>&copy; 2026 My Personal Portfolio. Built with semantic HTML.</p>
+    </footer>
+  </body>
+</html>
