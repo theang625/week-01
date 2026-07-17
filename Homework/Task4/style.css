@@ -1,0 +1,11 @@
+/* General body styling */
+body {
+    background-color: #f0f4f8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Ensure cards have a consistent look */
+.card {
+    border: none;
+    border-radius: 0.75rem; /* Softer rounded corners */
+}
