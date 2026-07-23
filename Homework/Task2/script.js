@@ -1,47 +1,27 @@
-// Wait for the DOM to be fully loaded before running the script
-document.addEventListener('DOMContentLoaded', () => {
+const gradeForm = document.querySelector("#gradeForm");
+const scoreInput = document.querySelector("#score");
+const gradeResult = document.querySelector("#gradeResult");
 
-    // --- Widget 3: Multiplication Table Logic ---
-    const multiplierInput = document.getElementById('multiplier-input');
-    const generateBtn = document.getElementById('generate-table-btn');
-    const multiplicationTable = document.getElementById('multiplication-table');
-    const tableBody = document.getElementById('table-body');
+gradeForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const score = Number(scoreInput.value);
 
-    if (generateBtn && multiplierInput && tableBody && multiplicationTable) {
-        const generateTable = () => {
-            const number = parseInt(multiplierInput.value, 10);
+  if (!Number.isFinite(score) || score < 0 || score > 100) {
+    gradeResult.textContent = "Enter a score from 0 to 100";
+    gradeResult.className = "result red";
+    return;
+  }
 
-            // Clear previous results and hide table if input is invalid
-            tableBody.innerHTML = '';
-            if (isNaN(number)) {
-                multiplicationTable.classList.add('d-none');
-                return;
-            }
-
-            // Loop from 1 to 9 to create table rows
-            for (let i = 1; i <= 9; i++) {
-                const expression = `${number} x ${i}`;
-                const result = number * i;
-
-                const row = `<tr>
-                                <td>${expression}</td>
-                                <td>${result}</td>
-                             </tr>`;
-                tableBody.innerHTML += row;
-            }
-
-            // Make the table visible
-            multiplicationTable.classList.remove('d-none');
-        };
-
-        generateBtn.addEventListener('click', generateTable);
-
-        // Allow pressing Enter to generate the table
-        multiplierInput.addEventListener('keyup', (event) => {
-            if (event.key === 'Enter') {
-                generateBtn.click();
-            }
-        });
-    }
-
+  const grade =
+    score >= 90
+      ? "A"
+      : score >= 80
+        ? "B"
+        : score >= 70
+          ? "C"
+          : score >= 50
+            ? "D"
+            : "F";
+  gradeResult.textContent = `Score: ${score} - Grade ${grade}`;
+  gradeResult.className = `result ${grade === "F" ? "red" : grade === "D" ? "orange" : "green"}`;
 });
